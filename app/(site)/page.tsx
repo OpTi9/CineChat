@@ -12,8 +12,8 @@ export default function Home() {
             sm:mx-auto
             sm:w-full
             sm:max-w-md">
-                <Image height="48" width="48" className="mx-auto w-auto pointer-events-none" src="/images/logo-cine.png" alt="Logo"/>
-                <h2 className="select-none draggable-false mt-6 text-center text-3xl font-extrabold tracking-tight text-gray-900">
+                <Image height="150" width="150" className="mx-auto w-auto pointer-events-none" src="/images/logo-cin.png" alt="Logo"/>
+                <h2 className="select-none mt-6 text-center text-3xl font-extrabold tracking-tight text-gray-900">
                     Sign in to your account
                 </h2>
             </div>

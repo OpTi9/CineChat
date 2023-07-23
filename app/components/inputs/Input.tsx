@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = ({
         <div>
             <label
                 htmlFor={id}
-                className='block text-sm font-medium text-gray-900 leading-6'
+                className='block text-sm font-medium text-gray-900 leading-6 select-none'
             >
                 {label}
             </label>
