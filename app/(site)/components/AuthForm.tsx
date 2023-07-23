@@ -2,6 +2,7 @@
 
 import {useCallback, useState} from "react";
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
+import Input from "@/app/components/inputs/Input";
 
 type Variant = 'login' | 'register';
 
@@ -53,7 +54,12 @@ const AuthForm = () => {
                     className='space-y-6'
                     onSubmit={handleSubmit(onSubmit)}
                 >
-                    <input/>
+                    <Input
+                        errors={errors}
+                        label="Email"
+                        register={register}
+                        id='email'
+                    />
                 </form>
             </div>
         </div>
