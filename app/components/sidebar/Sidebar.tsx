@@ -1,24 +1,14 @@
 import React from "react";
 import DesktopSidebar from "@/app/components/sidebar/DesktopSidebar";
 import MobileFooter from "@/app/components/sidebar/MobileFooter";
-
-/**
- * Sidebar component.
- *
- * This component renders a sidebar for desktop view along with
- * its child components. The sidebar is from the `DesktopSidebar`
- * component, and the children render in the main area.
- *
- * @param {Object} props The props that are passed to this component.
- * @param {React.ReactNode} props.children The child components of this Sidebar component.
- *
- * @returns {JSX.Element} Returns a div with `DesktopSidebar` and main content area.
- */
+import getCurrentUser from "@/app/actions/getCurrentUser";
 
 async function Sidebar({ children }: { children: React.ReactNode }) {
+  const currentUser = await getCurrentUser();
+
   return (
     <div className="h-full">
-      <DesktopSidebar />
+      <DesktopSidebar currentUser={currentUser!} />
       <MobileFooter />
       <main className="lg:pl-20 h-full">{children}</main>
     </div>

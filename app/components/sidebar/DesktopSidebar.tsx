@@ -1,27 +1,20 @@
 "use client";
 
 import useRoutes from "@/app/hooks/useRoutes";
-import { useState } from "react";
+import React, { useState } from "react";
 import DesktopItem from "@/app/components/sidebar/DesktopItem";
+import { User } from "@prisma/client";
+import Avatar from "@/app/components/Avatar";
 
-/**
- * DesktopSidebar - A sidebar component for desktop view.
- *
- * The component maintains a state for its open status and fetches the routes to be displayed
- * using the `useRoutes` hook. Each route is rendered as a `DesktopItem`.
- *
- * State:
- * - isOpen: Boolean indicating whether the sidebar is open or not.
- *
- * Imports:
- * - useRoutes: Hook that fetches the route data.
- * - useState: React hook used to manage state.
- * - DesktopItem: Component used to display each individual route in the sidebar.
- */
+interface DesktopSidebarProps {
+  currentUser: User;
+}
 
-const DesktopSidebar = () => {
+const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   const routes = useRoutes();
-  const [isOen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  console.log({ currentUser });
 
   return (
     <div
@@ -55,6 +48,14 @@ const DesktopSidebar = () => {
             />
           ))}
         </ul>
+      </nav>
+      <nav className="mt-4 flex flex-col justify-between items-center">
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className="cursor-pointer hover: opacity-75 transition"
+        >
+          <Avatar user={currentUser} />
+        </div>
       </nav>
     </div>
   );
