@@ -4,6 +4,18 @@ import useRoutes from "@/app/hooks/useRoutes";
 import useConversation from "@/app/hooks/useConversation";
 import MobileItem from "@/app/components/sidebar/MobileItem";
 
+/**
+ * MobileFooter - A footer component for mobile view.
+ *
+ * This component fetches route data using the `useRoutes` hook and conversation state using the `useConversation` hook.
+ * Each route is rendered as a `MobileItem`. If the conversation state `isOpen` is true, the MobileFooter does not render.
+ *
+ * Imports:
+ * - useRoutes: Hook that fetches the route data.
+ * - useConversation: Hook that fetches the conversation state.
+ * - MobileItem: Component used to display each individual route in the footer.
+ */
+
 const MobileFooter = () => {
   const routes = useRoutes();
   const { isOpen } = useConversation();

@@ -11,6 +11,17 @@ interface DesktopItemProps {
   onClick?: () => void;
 }
 
+/**
+ * DesktopItem - Navigation item for a desktop view.
+ *
+ * Props:
+ * - href: URL to navigate to when clicked.
+ * - label: Text for the item, hidden from view but available to screen readers.
+ * - icon: React component for the icon.
+ * - active (optional): Whether the item is currently active.
+ * - onClick (optional): Handler for when the item is clicked.
+ */
+
 const DesktopItem: React.FC<DesktopItemProps> = ({
   href,
   label,
