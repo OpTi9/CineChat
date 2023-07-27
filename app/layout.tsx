@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   description: "chat for cinema fans",
 };
 
+/**
+ * RootLayout component.
+ *
+ * This is the root component of your application. It applies global styles,
+ * sets the metadata for the application, and wraps all child components
+ * with the required context providers: `AuthContext` and `ToasterContext`.
+ * It also sets the "Inter" Google font.
+ *
+ * @param {Object} props The props that are passed to this component.
+ * @param {React.ReactNode} props.children The child components of this RootLayout component.
+ *
+ * @returns {JSX.Element} Returns the RootLayout with context providers and children.
+ */
+
 export default function RootLayout({
   children,
 }: {

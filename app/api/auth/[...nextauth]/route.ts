@@ -1,3 +1,21 @@
+/**
+ * Next.js Authentication options and handlers.
+ *
+ * This module configures the authentication options for a Next.js application using
+ * NextAuth. It sets up multiple OAuth providers (GitHub and Google) as well as a
+ * credentials-based provider.
+ *
+ * For the credentials provider, it expects an email and a password, then uses bcrypt
+ * to compare the submitted password with the hashed password stored in the database.
+ *
+ * The `PrismaAdapter` is used for handling the storage of user accounts, sessions,
+ * verification requests, etc., in your Prisma-managed database.
+ *
+ * The `authOptions` are exported for use with the NextAuth API route handlers.
+ * Two identical handlers are exported, one for GET requests and one for POST requests.
+ *
+ * @module next-auth
+ */
 import bcrypt from "bcrypt";
 import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
