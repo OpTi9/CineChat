@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import useConversation from "@/app/hooks/useConversation";
 import clsx from "clsx";
 import { MdOutlineGroupAdd } from "react-icons/md";
+import ConversationBox from "@/app/conversations/components/ConversationBox";
 
 interface ConversationsListProps {
   initialItems: FullConversationType[];
@@ -59,6 +60,13 @@ const ConversationsList: React.FC<ConversationsListProps> = ({
             <MdOutlineGroupAdd size={25} />
           </div>
         </div>
+        {items.map((item) => (
+          <ConversationBox
+            key={item.id}
+            data={item}
+            selected={conversationId === item.id}
+          />
+        ))}
       </div>
     </aside>
   );
