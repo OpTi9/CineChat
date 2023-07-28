@@ -25,6 +25,7 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
       "
       >
         <Image
+          draggable={false}
           alt="Avatar"
           src={user?.image || "/images/placeholder.jpg"}
           fill
