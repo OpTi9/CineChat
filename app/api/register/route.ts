@@ -3,6 +3,24 @@ import bcrypt from "bcrypt";
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 
+/**
+ * POST API endpoint to register a new user.
+ *
+ * @module
+ *
+ * @requires bcrypt - For hashing passwords.
+ * @requires prismadb - Prisma database client.
+ * @requires next/server - For handling Next.js server responses.
+ *
+ * @function POST
+ * - Receives user info from request.
+ * - Validates the provided user data.
+ * - Hashes the user password and stores the new user in the database.
+ *
+ * @throws Returns 400 if provided user info is invalid.
+ * @throws Returns 500 for internal server errors and logs the error with "Register error" tag.
+ */
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();

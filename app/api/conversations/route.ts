@@ -2,6 +2,26 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
+/**
+ * POST API endpoint to create or fetch chat conversations.
+ *
+ * @module
+ *
+ * @requires getCurrentUser - Fetches current authenticated user.
+ * @requires next/server - For handling Next.js server responses.
+ * @requires prismadb - Prisma database client.
+ *
+ * @function POST
+ * - Validates user credentials and request body.
+ * - If creating a group chat, checks for necessary group info.
+ * - For group chats, creates a new conversation with members.
+ * - For direct chats, fetches or creates a new conversation between users.
+ *
+ * @throws Returns 401 if the user is unauthorized.
+ * @throws Returns 400 if the group chat request is invalid.
+ * @throws Returns 500 for internal server errors.
+ */
+
 export async function POST(request: Request) {
   try {
     const currentUser = await getCurrentUser();
