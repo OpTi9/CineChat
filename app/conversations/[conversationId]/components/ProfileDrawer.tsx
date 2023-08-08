@@ -14,6 +14,23 @@ interface ProfileDrawerProps {
   };
 }
 
+/**
+ * ProfileDrawer Component
+ *
+ * This component renders a side drawer that displays detailed information
+ * about a conversation participant or group.
+ *
+ * Props:
+ * - isOpen: Determines if the drawer is open or closed.
+ * - onClose: Callback function to close the drawer.
+ * - data: Contains the conversation and associated user/group data.
+ *
+ * Features:
+ * - Displays the participant's or group's avatar, name, and status.
+ * - For individual users, it shows email and joined date.
+ * - Contains an option to delete the conversation.
+ */
+
 const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
   isOpen,
   onClose,
